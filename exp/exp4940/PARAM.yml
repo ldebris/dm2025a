@@ -1,0 +1,134 @@
+experimento: 4940.0
+semilla_primigenia: 100151.0
+kaggle:
+  competencia: data-mining-analista-sr-2025-a
+  cortes:
+  - 10000.0
+  - 10500.0
+  - 11000.0
+  - 11500.0
+  - 12000.0
+trainingstrategy:
+  undersampling: 0.5
+hyperparametertuning:
+  xval_folds: 5.0
+  iteraciones: 60.0
+lgbm:
+  param_fijos:
+    boosting: gbdt
+    objective: binary
+    metric: auc
+    first_metric_only: no
+    boost_from_average: yes
+    feature_pre_filter: no
+    force_row_wise: yes
+    verbosity: -100.0
+    seed: 100151.0
+    max_depth: 10
+    min_gain_to_split: 0.0
+    min_sum_hessian_in_leaf: 0.001
+    lambda_l1: 3.84
+    lambda_l2: 4.72
+    max_bin: 31
+    bagging_fraction: 0.86
+    pos_bagging_fraction: 1.0
+    neg_bagging_fraction: 1.0
+    is_unbalance: no
+    scale_pos_weight: 1.0
+    drop_rate: 0.1
+    max_drop: 50.0
+    skip_drop: 0.5
+    extra_trees: no
+    num_iterations: 1100.0
+    learning_rate: 0.014
+    feature_fraction: 0.35
+    num_leaves: 200.0
+    min_data_in_leaf: 352.0
+hypeparametertuning:
+  hs:
+    pars:
+      num_iterations:
+        id: num_iterations
+        type: integer
+        len: 1
+        lower: 8
+        upper: 2048
+        values: ~
+        cnames: ~
+        allow.inf: no
+        has.default: no
+        default: ~
+        trafo: ~
+        requires: ~
+        tunable: yes
+        special.vals: []
+      learning_rate:
+        id: learning_rate
+        type: numeric
+        len: 1
+        lower: 0.01
+        upper: 0.3
+        values: ~
+        cnames: ~
+        allow.inf: no
+        has.default: no
+        default: ~
+        trafo: ~
+        requires: ~
+        tunable: yes
+        special.vals: []
+      feature_fraction:
+        id: feature_fraction
+        type: numeric
+        len: 1
+        lower: 0.1
+        upper: 1.0
+        values: ~
+        cnames: ~
+        allow.inf: no
+        has.default: no
+        default: ~
+        trafo: ~
+        requires: ~
+        tunable: yes
+        special.vals: []
+      num_leaves:
+        id: num_leaves
+        type: integer
+        len: 1
+        lower: 8
+        upper: 512
+        values: ~
+        cnames: ~
+        allow.inf: no
+        has.default: no
+        default: ~
+        trafo: ~
+        requires: ~
+        tunable: yes
+        special.vals: []
+      min_data_in_leaf:
+        id: min_data_in_leaf
+        type: integer
+        len: 1
+        lower: 50
+        upper: 1000
+        values: ~
+        cnames: ~
+        allow.inf: no
+        has.default: no
+        default: ~
+        trafo: ~
+        requires: ~
+        tunable: yes
+        special.vals: []
+    forbidden: ~
+out:
+  lgbm:
+    mejores_hiperparametros:
+      num_iterations: 1571
+      learning_rate: 0.035368
+      feature_fraction: 0.3040041
+      num_leaves: 18
+      min_data_in_leaf: 114
+    'y': 0.9316763
