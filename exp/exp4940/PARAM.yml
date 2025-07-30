@@ -25,12 +25,12 @@ lgbm:
     verbosity: -100.0
     seed: 100151.0
     max_depth: 10
-    min_gain_to_split: 0.0
+    min_gain_to_split: 0.186262
     min_sum_hessian_in_leaf: 0.001
-    lambda_l1: 3.84
-    lambda_l2: 4.72
+    lambda_l1: 3.8706
+    lambda_l2: 4.078
     max_bin: 31
-    bagging_fraction: 0.86
+    bagging_fraction: 0.9048
     pos_bagging_fraction: 1.0
     neg_bagging_fraction: 1.0
     is_unbalance: no
@@ -39,11 +39,11 @@ lgbm:
     max_drop: 50.0
     skip_drop: 0.5
     extra_trees: no
-    num_iterations: 1100.0
-    learning_rate: 0.014
-    feature_fraction: 0.35
-    num_leaves: 200.0
-    min_data_in_leaf: 352.0
+    num_iterations: 1000.0
+    learning_rate: 0.010462
+    feature_fraction: 0.496
+    num_leaves: 40.0
+    min_data_in_leaf: 120.0
 hypeparametertuning:
   hs:
     pars:
@@ -51,8 +51,8 @@ hypeparametertuning:
         id: num_iterations
         type: integer
         len: 1
-        lower: 8
-        upper: 2048
+        lower: 200
+        upper: 2000
         values: ~
         cnames: ~
         allow.inf: no
@@ -66,8 +66,8 @@ hypeparametertuning:
         id: learning_rate
         type: numeric
         len: 1
-        lower: 0.01
-        upper: 0.3
+        lower: 0.005
+        upper: 0.05
         values: ~
         cnames: ~
         allow.inf: no
@@ -81,8 +81,8 @@ hypeparametertuning:
         id: feature_fraction
         type: numeric
         len: 1
-        lower: 0.1
-        upper: 1.0
+        lower: 0.6
+        upper: 0.95
         values: ~
         cnames: ~
         allow.inf: no
@@ -126,9 +126,9 @@ hypeparametertuning:
 out:
   lgbm:
     mejores_hiperparametros:
-      num_iterations: 1571
-      learning_rate: 0.035368
-      feature_fraction: 0.3040041
-      num_leaves: 18
-      min_data_in_leaf: 114
-    'y': 0.9316763
+      num_iterations: 1497
+      learning_rate: 0.0243464
+      feature_fraction: 0.7344952
+      num_leaves: 226
+      min_data_in_leaf: 449
+    'y': 0.9313042
